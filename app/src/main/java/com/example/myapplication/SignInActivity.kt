@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityMainBinding
 
 class SignInActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,30 +18,27 @@ class SignInActivity : AppCompatActivity() {
         val intentSingUp = Intent(this, SignUpActivity::class.java)
 
         binding.apply {
+
             //로그인 버튼 눌렀을 때
             btnLogin.setOnClickListener {
-                val userId : String = etId.text.toString()
-                val userPw : String = etPassword.text.toString()
+                val userId: String = etId.text.toString()
+                val userPw: String = etPassword.text.toString()
 
-                if (userId.isNotEmpty() && userPw.isNotEmpty()
-                ) {
+                if (userId.isNotEmpty() && userPw.isNotEmpty()) {
                     startActivity(intentHome)
                     Toast.makeText(this@SignInActivity, "$userId 님 환영합니다", Toast.LENGTH_SHORT).show()
                 } else {
                     Toast.makeText(this@SignInActivity, "로그인 실패", Toast.LENGTH_SHORT).show()
                 }
             }
-        }
 
-        //회원가입 버튼 눌렀을 때
-        binding.btnSignup.setOnClickListener {
-            startActivity(intentSingUp)
-            finish()
-        }
+            //회원가입 버튼 눌렀을 때
+            btnSignup.setOnClickListener {
+                startActivity(intentSingUp)
+                finish()
+            }
 
-
-        //id, pw 값 가지고 있을 경우 각 editText에 setText
-        binding.apply {
+            //id, pw 값 가지고 있을 경우 각 editText에 setText
             if (intent.hasExtra("id") && intent.hasExtra("pw")) {
                 val id = intent.getStringExtra("id")
                 val pw = intent.getStringExtra("pw")
