@@ -187,3 +187,289 @@ git을 다루는 방법을 하나도 모르는 사람이었는데, 이번에 과
 하지만 자주 들어가서 정보를 확인하다보니 notion이 점점 어렵지 않게 느껴집니다! <br>
 노션과 깃.. 차차 친해지겠습니다💗
 <br><br><br>
+
+
+
+<br><br><br><br><br>
+
+# 2️⃣ Second Week
+
+|Home|
+|---|
+||
+
+
+<br><br>
+
+
+🙏FollowerRecyclerView와 RepositoryRecyclerView의 코드가 유사하므로 FollowerRecyclerView 구현코드만 작성하겠습니다.🙏
+
+<br>
+
+## LEVEL1
+
+<br><br>
+
+**1. FollowerRecyclerView**
+
+<br>
+
++) LinearLayoutManager 사용 ( GridLayoutManage관련 코드는 하단에 첨부하겠습니다. ) 
+
+```kotlin
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_follower"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_follower_list" />
+```
+
+<br><br>
+
+**2. FolloweData**
+
+```kotlin
+data class FollowerData(
+    val name: String,
+    val introduction: String
+)
+```
+
+<br><br>
+
+**3. FollowrAdapter**
+
+```kotlin
+class FollowerAdapter : RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>() {
+    val userList = mutableListOf<FollowerData>()
+
+    class FollowerViewHolder(private val binding : ItemFollowerListBinding) : RecyclerView.ViewHolder(binding.root){
+        fun onBind(data: FollowerData) {
+            binding.tvName.text = data.name
+            binding.tvIntroduction.text = data.introduction
+        }
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FollowerViewHolder {
+        val binding = ItemFollowerListBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+
+        return FollowerViewHolder(binding)
+    }
+
+    override fun onBindViewHolder(holder: FollowerViewHolder, position: Int) {
+        holder.onBind(userList[position])
+    }
+
+    override fun getItemCount(): Int = userList.size
+}
+
+```
+
+<br><br>
+
+
+
+**FollowerFragment**
+
+```kotlin
+class FollowerFragment : Fragment() {
+    private lateinit var follwerAdapter: FollowerAdapter
+    private var _binding: FollowerFragmentBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        _binding = FollowerFragmentBinding.inflate(layoutInflater, container,false)
+
+        follwerAdapter = FollowerAdapter()
+        binding.rvFollower.adapter = follwerAdapter
+
+        follwerAdapter.userList.addAll(
+            listOf(
+                FollowerData("이혜빈1", "안녕하세요"),
+                FollowerData("이혜빈2", "안녕하세요"),
+                FollowerData("이혜빈3", "안녕하세요"),
+                FollowerData("이혜빈4", "안녕하세요")
+            )
+        )
+        follwerAdapter.notifyDataSetChanged()
+        return binding.root
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+}
+```
+
+<br><br>
+
+**HomeActivity**
+  
+```kotlin
+class HomeActivity : AppCompatActivity() {
+    private var postion = FIRST_POSITION
+    private lateinit var binding : ActivityHomeBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+
+        setContentView(binding.root)
+
+        initTransactionEvent()
+    }
+
+    fun initTransactionEvent() {
+        val followerFragment = FollowerFragment()
+        val repositstoryFragment = RepositoryFragment()
+
+        supportFragmentManager.beginTransaction().add(R.id.container_rv, followerFragment).commit()
+
+        binding.btnFollower.setOnClickListener {
+            supportFragmentManager.beginTransaction().replace(R.id.container_rv, followerFragment) .commit()
+        }
+
+        binding.btnRepository.setOnClickListener {
+            supportFragmentManager.beginTransaction().replace(R.id.container_rv, repositstoryFragment) .commit()
+        }
+    }
+
+
+    companion object {
+        const val FIRST_POSITION = 1
+    }
+
+}
+```
+
+<br><br>
+
+
+**xml ellipsize 속성**
+```kotlin
+<TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        tools:text="내용" />
+```
+
+<br><br>
+
+**RepositoryRecyclerView 속성**
+<br>
++)GridlayoutManager 사용
+
+```kotlin
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_repository"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="4"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        tools:listitem="@layout/item_repository_list" />
+
+```
+
+<br>
+
+## LEVEL2-2
+
+<br>
+시험기간이라.. 2-2만 구현했습니다.. 다른 부분은 차차 해보겠습니다...
+
+<br><br>
+
+**Decoration**
+
+```kotlin
+   class Decoration(val colorString: String, val left: Int, val right: Int, val height: Int, val bottom:Int) : RecyclerView.ItemDecoration() {
+    override fun onDraw(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
+        super.onDraw(c, parent, state)
+
+        val paint = Paint().apply {
+            color = Color.parseColor(colorString)
+        }
+
+        for (i in 0 until parent.childCount) {
+            val child = parent.getChildAt(i)
+            if (i != parent.childCount - 1) {
+                c.drawRect(child.left.toFloat(), child.bottom.toFloat(), child.right.toFloat(), child.bottom.toFloat() + height, paint)
+            }
+        }
+    }
+    override fun getItemOffsets(
+        outRect: Rect,
+        view: View,
+        parent: RecyclerView,
+        state: RecyclerView.State
+    ) {
+        super.getItemOffsets(outRect, view, parent, state)
+        outRect.right = right
+        outRect.left = left
+        outRect.top = height
+        outRect.bottom = height
+    }
+}
+
+```
+<br><br>
+
+**FollowerFragment**
+
+```kotlin
+binding.rvFollower.addItemDecoration(Decoration("#F658A6", 50,50,25,25))
+```
+
+<br><br><br><br>
+*** 
+<br>
+
+**🤍이번 과제를 통해 배운 내용 & 성장한 내용🤍**
+
+<br>
+
+**☝Fragment에 대해 이해했습니다.**
+<br>
+실습 예제만 따라하고 직접 원하는 요소를 살려서 구현은 해본 적이 없었는데, 이번 기회를 통해 직접 코드를 작성하면서 제대로 이해할 수 있는 시간을 가졌습니다.
+<br>
+그리고 fragment에서 binding을 사용하는 법 또한 익힐 수 있었습니다. 생명주기를 제대로 이해하지 못했는데 이번 기회를 통해 제대로 이해할 수 있게 되었습니다.
+<br><br>
+
+**✌ItemDecoration을 알게 되었습니다.**
+<br>
+원래 xml에서 margin값을 모두 줬는데, 이번 과제를 통해 ItemDecoration을 처음 알게되었습니다.
+<br>
+그래서 제가봐도 아직 부족하고.. 이상한.. 코드지만 더 열심히 공부해서.. 다음주에 더 나은 코드로 바꿔오겠습니다
+
+<br><br><br>
+
