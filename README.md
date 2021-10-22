@@ -196,7 +196,7 @@ git을 다루는 방법을 하나도 모르는 사람이었는데, 이번에 과
 
 |Home|
 |---|
-||
+|![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/69586104/138444148-fa9b689b-10ec-4559-ba0c-3bf935d4707f.gif)|
 
 
 <br><br>
