@@ -212,7 +212,6 @@ git을 다루는 방법을 하나도 모르는 사람이었는데, 이번에 과
 
 **1. FollowerRecyclerView**
 
-<br>
 
 +) LinearLayoutManager 사용 ( GridLayoutManage관련 코드는 하단에 첨부하겠습니다. ) 
 
