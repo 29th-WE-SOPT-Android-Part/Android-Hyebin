@@ -36,6 +36,7 @@ class SignInActivity : AppCompatActivity() {
         //회원가입 버튼 눌렀을 때
         binding.btnSignup.setOnClickListener {
             startActivity(intentSingUp)
+            finish()
         }
 
 

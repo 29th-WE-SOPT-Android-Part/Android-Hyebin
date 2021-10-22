@@ -25,10 +25,10 @@ class SignUpActivity : AppCompatActivity() {
                 val userPw : String = etPassword.text.toString()
 
                 if (userName.isNotEmpty() && userId.isNotEmpty() && userPw.trim().isNotEmpty()) {
-                    //finish()
                     intent.putExtra("id", userId)
                     intent.putExtra("pw", userPw)
                     startActivity(intent)
+                    finish()
 
                 } else {
                     Toast.makeText(this@SignUpActivity, "입력되지 않은 정보가 있습니다", Toast.LENGTH_SHORT).show()
