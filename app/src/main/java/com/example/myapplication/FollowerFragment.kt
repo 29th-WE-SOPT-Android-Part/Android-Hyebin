@@ -1,14 +1,10 @@
 package com.example.myapplication
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.databinding.FollowerFragmentBinding
 
 
@@ -23,11 +19,8 @@ class FollowerFragment : Fragment() {
     ): View? {
         _binding = FollowerFragmentBinding.inflate(layoutInflater, container,false)
 
-
-
         //ItemDecoration
-        binding.rvFollower.addItemDecoration(Decoration(70,70,20, Color.BLACK))
-
+        binding.rvFollower.addItemDecoration(Decoration("#F658A6", 50,50,25,25))
 
         follwerAdapter = FollowerAdapter()
         binding.rvFollower.adapter = follwerAdapter
@@ -42,9 +35,7 @@ class FollowerFragment : Fragment() {
         )
         follwerAdapter.notifyDataSetChanged()
         return binding.root
-
     }
-
 
     override fun onDestroy() {
         super.onDestroy()
