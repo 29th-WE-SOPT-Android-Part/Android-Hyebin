@@ -7,7 +7,6 @@ import com.example.myapplication.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
     private var postion = FIRST_POSITION
-   // private lateinit var userAdapter: FollowerAdapter
     private lateinit var binding : ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
