@@ -10,11 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".RepositoryFragment"
+            android:exported="true" />
+        <activity
+            android:name=".FollowerFragment"
+            android:exported="true" />
+        <activity
             android:name=".SignUpActivity"
             android:exported="true" />
         <activity
             android:name=".HomeActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".SignInActivity"
             android:exported="true">

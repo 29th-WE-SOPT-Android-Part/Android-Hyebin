@@ -10,25 +10,24 @@
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="25dp"
         android:text="SOPTHub"
+        android:textColor="@color/pink"
         android:textSize="35sp"
         android:textStyle="bold"
-        android:textColor="@color/pink"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fillViewport="true"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title">
 
@@ -38,9 +37,9 @@
 
             <ImageView
                 android:id="@+id/iv_profile"
-                android:layout_width="180dp"
+                android:layout_width="150dp"
                 android:layout_height="0dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:src="@drawable/selca"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -48,77 +47,163 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_name"
+                android:id="@+id/tv_q_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="이름    이혜빈"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="60dp"
+                android:text="이름"
+                android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iv_profile"/>
+                app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
 
             <TextView
-                android:id="@+id/tv_age"
+                android:id="@+id/tv_a_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="나이    22"
+                android:layout_marginStart="20dp"
+                android:text="이혜빈"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_q_name"
+                app:layout_constraintStart_toEndOf="@+id/tv_q_name"
+                app:layout_constraintTop_toTopOf="@+id/tv_q_name" />
+
+            <TextView
+                android:id="@+id/tv_q_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="60dp"
+                android:text="나이"
+                android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_name"/>
+                app:layout_constraintTop_toBottomOf="@+id/tv_q_name" />
 
             <TextView
-                android:id="@+id/tv_mbti"
+                android:id="@+id/tv_a_age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="mbti    ESFJ"
+                android:layout_marginStart="20dp"
+                android:text="22"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_q_age"
+                app:layout_constraintStart_toEndOf="@+id/tv_q_age"
+                app:layout_constraintTop_toTopOf="@+id/tv_q_age" />
+
+            <TextView
+                android:id="@+id/tv_q_mbti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="60dp"
+                android:text="mbti"
+                android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_age"/>
+                app:layout_constraintTop_toBottomOf="@+id/tv_q_age" />
 
             <TextView
-                android:id="@+id/tv_introduce"
+                android:id="@+id/tv_a_mbti"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginStart="20dp"
+                android:text="ESFJ"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_q_mbti"
+                app:layout_constraintStart_toEndOf="@+id/tv_q_mbti"
+                app:layout_constraintTop_toTopOf="@+id/tv_q_mbti" />
+
+            <TextView
+                android:id="@+id/tv_q_introduce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="60dp"
                 android:gravity="center"
-                android:text="   간단한 소개     \n안녕하세요. \nSOPT 29기 안드로이드 YB 이혜빈 입니다!\n 잘부탁드립니다!"
+                android:text="간단한 소개"
+                android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="@+id/tv_mbti"
-                app:layout_constraintStart_toStartOf="@+id/tv_mbti"
-                app:layout_constraintTop_toBottomOf="@+id/tv_mbti"/>
-
-            <ImageButton
-                android:id="@+id/btn_git"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"
-                android:maxHeight="60dp"
-                android:maxWidth="60dp"
-                android:background="@color/white"
-                android:src="@drawable/btn_bear"
-                android:adjustViewBounds="true"
-                android:scaleType="fitCenter"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_introduce" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_q_mbti" />
+
+
+            <TextView
+                android:id="@+id/tv_a_introduce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="안녕하세요!!"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_q_introduce"
+                app:layout_constraintStart_toEndOf="@+id/tv_q_introduce"
+                app:layout_constraintTop_toTopOf="@+id/tv_q_introduce" />
+
+
+            // 깃 이동 버튼 주석
+            <!--            <ImageButton-->
+            <!--                android:id="@+id/btn_git"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="15dp"-->
+            <!--                android:adjustViewBounds="true"-->
+            <!--                android:background="@color/white"-->
+            <!--                android:maxWidth="60dp"-->
+            <!--                android:maxHeight="60dp"-->
+            <!--                android:scaleType="fitCenter"-->
+            <!--                android:src="@drawable/btn_bear"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintHorizontal_bias="0.501"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/tv_introduce" />-->
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/btn_follower"
+        android:layout_width="130dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_fill_pink"
+        android:text="팔로워 \n 목록"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scroll" />
+
+    <Button
+        android:id="@+id/btn_repository"
+        android:layout_width="130dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="60dp"
+        android:background="@drawable/btn_fill_orange"
+        android:text="레파지토리 \n 목록"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_follower" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/container_rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_follower">
+
+    </androidx.fragment.app.FragmentContainerView>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

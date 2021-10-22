@@ -3,7 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/btn_fill_orange.xml" value="0.1787037037037037" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/btn_fill_pink.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/btn_fill_white.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/et_border_pink.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.15" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/iv_border_black.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/line_divder.xml" value="0.23487179487179488" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/line_divider.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_follower_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_main.xml" value="0.13973799126637554" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_repository_fragment.xml" value="0.22708333333333333" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_sign_up.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/follower.xml" value="0.12001811594202899" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/follower_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/fragment_follower2.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/item_follower_list.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/item_repository_list.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/item_sample_list.xml" value="0.176" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/line_divider.xml" value="0.11094224924012158" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/repository_fragment.xml" value="0.1" />
       </map>
     </option>
   </component>
