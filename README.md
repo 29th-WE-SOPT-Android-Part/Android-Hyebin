@@ -472,3 +472,219 @@ binding.rvFollower.addItemDecoration(Decoration("#F658A6", 50,50,25,25))
 
 <br><br><br>
 
+<br><br><br><br><br>
+
+# 3️⃣ Third Week
+
+|SignUp|SignIn|Profile|Home|ViewPager|
+|---|---|---|---|---|
+|![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/69586104/139569164-e49e2022-49ec-44a1-a9c9-175248f5ae29.gif)| ![ezgif com-gif-maker (7)](https://user-images.githubusercontent.com/69586104/139569185-bf83c8f8-820f-4b66-b505-592578b36859.gif)|![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/69586104/139569193-df9a7f96-64d3-4962-8bae-140a659571a7.gif)|![ezgif com-gif-maker (9)](https://user-images.githubusercontent.com/69586104/139569199-8367e45a-faca-4e24-9049-e147d65f724a.gif)|![ezgif com-gif-maker (10)](https://user-images.githubusercontent.com/69586104/139569210-96a0630e-680b-494c-a4a3-dadb42c389fc.gif)|
+
+
+<br><br>
+
+## LEVEL1
+
+<br><br>
+
+**1-1. EditText에 selector 활용하기**
+
+
+```kotlin
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/et_border_pink" android:state_focused="true"/>
+    <item android:drawable="@drawable/et_fill_gray" android:state_focused="false"/>
+</selector>
+```
+
+<br><br>
+
+**1-2. 버튼 등등 Drawable로 직접 만들기**
+
+```kotlin
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/pink"/>
+    <corners
+        android:bottomRightRadius="5dp"
+        android:bottomLeftRadius="5dp"
+        android:topLeftRadius="5dp"
+        android:topRightRadius="5dp"/>
+```
+
+<br><br>
+
+✍Button에 selector 활용하기는 위의 EditText에 selector 활용하기와 같은 방식으로 코드를 작성했습니다! 
+
+<br>
+
+**2-1. 이미지 Glide의 CircleCrop 기능을 활용해서 넣어주기**
+
+```kotlin
+ Glide.with(this)
+            .load("https://mblogthumb-phinf.pstatic.net/MjAxOTA0MjNfMjcy/MDAxNTU2MDIwNjg0ODMw.KwUiIDMhdpKzsuNX83GpdFljS1HjgNhCBNcXv2QXfxkg.ksHQVjDUTn8AMV4XVSfETLX-tZ1LTz9-bOmO0o7AtI8g.JPEG.ndh7782/%EC%B9%98%EC%A6%8801.JPG?type=w800")
+            .apply(RequestOptions.circleCropTransform())
+            .into(binding.ivProfile)
+
+```
+
+<br><br>
+
+
+
+**2-2. 아이콘 이미지 export해서 사용**
+
+```kotlin
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_profile"
+        android:icon="@drawable/ic_person_gray"
+        android:title="프로필" />
+
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_home_gray"
+        android:title="홈" />
+
+    <item
+        android:id="@+id/menu_camera"
+        android:icon="@drawable/ic_camera_gray"
+        android:title="카메라" />
+</menu>
+```
+
+<br><br>
+
+**2-3. 하단에 BottomNavigation 넣어주기**
+  
+```kotlin
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:menu="@menu/menu_bottom"
+        app:itemIconTint="@drawable/selector_icon"
+        app:itemTextColor="@drawable/selector_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+```
+
+<br><br>
+
+
+**xml ellipsize 속성**
+```kotlin
+<TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        tools:text="내용" />
+```
+
+<br><br>
+
+**3-1 TabLayout + ViewPager2**
+
+```kotlin
+ <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tl_follow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:fontFamily="@font/noto_sans_kr_regular"
+        android:textFontWeight="500"
+        android:textSize="16sp"
+        app:tabIndicatorColor="@color/pink"
+        app:tabIndicatorHeight="3dp"
+        app:tabSelectedTextColor="@color/pink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_follow"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tl_follow" />
+
+```
+
+<br>
+
+## LEVEL2-2
+
+<br><br>
+
+**FollowerAdapter**
+
+```kotlin
+ Glide.with(itemView.context).load(data.photo)
+                .apply(RequestOptions.circleCropTransform())
+                .into(binding.ivProfile)
+```
+<br><br>
+
+**FollowerData**
+
+```kotlin
+data class FollowerData(
+    val name: String,
+    val introduction: String,
+    val photo : String
+)
+```
+
+<br><br>
+
+**FollowerFragment**
+
+```kotlin
+ follwerAdapter.userList.addAll(
+            listOf(
+                FollowerData("스폰지밥", "안녕하세요", "https://ww.namu.la/s/bd52223e4d1f11fcc4c7f6506bf3321b26579bf118db6c1ca20492b9af4228a414edd25f1006baace220e4ca771288e0f38d6cbf253ae4e9d39aaf4b881600b0d65e518e7d94891837ee9a0c6a723aac0f4d2b7bf4a65b36bd1fe636aa49c632"),
+                FollowerData("뚱이", "안녕하세요", "https://img.insight.co.kr/static/2020/08/12/700/fyzvinle3b068ce501hq.jpg"),
+                FollowerData("집게사장", "안녕하세요", "https://pbs.twimg.com/media/D8RITHlV4AAb1iG.jpg")
+            )
+        )
+```
+
+
+<br><br><br><br>
+*** 
+<br>
+
+**🤍이번 과제를 통해 배운 내용 & 성장한 내용🤍**
+
+<br>
+
+**☝디자인을 적용하는 방법을 익혔습니다**
+<br>
+초기에 직접 레이아웃을 짰을 때와 디자이너분께서 디자인해주는 것을 보며 수정을 해나가면서 나오는 결과물의 차이를 보고 디자이너의 중요성과 협업의 중요성을 깨달을 수 있는 계가기 되었습니다.
+<br>
+또한, 피그마를 제대로 다뤄본 적이 한번도 없었는데, 협업에 있어서 피그마를 쓰는 법을 익힐 수 있었습니다.
+<br><br>
+
+**✌ViewPager2를 이해했습니다**
+<br>
+어플을 사용하면서 가장 많이 봤던 기능 중 하나였는데, 이번 세미나를 통해 ViewPager2를 알 수 있었습니다.
+<br>
+또한, TabLayout등등도 함께 배울 수 있어서 뜻깊었습니다.
+
+<br><br><br>
+
