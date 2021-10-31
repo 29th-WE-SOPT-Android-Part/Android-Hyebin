@@ -8,6 +8,8 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myapplication.databinding.ActivityMainBinding
+import retrofit2.Call
+import retrofit2.Callback
 
 class SignInActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -45,7 +47,7 @@ class SignInActivity : AppCompatActivity() {
     //회원가입 버튼 눌렀을 때 이벤트
     fun pressSignUpBtnEvent() {
         val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult -> }
-        binding.btnSignup.setOnClickListener {
+        binding.tvSignin.setOnClickListener {
             startForResult.launch(Intent(this, SignUpActivity::class.java))
         }
 
@@ -58,4 +60,7 @@ class SignInActivity : AppCompatActivity() {
             binding.etPassword.setText(pw)
         }
     }
+
+    
+
 }

@@ -1,8 +1,11 @@
 package com.example.myapplication
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.myapplication.databinding.ItemFollowerListBinding
 
 
@@ -13,6 +16,9 @@ class FollowerAdapter : RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>
         fun onBind(data: FollowerData) {
             binding.tvName.text = data.name
             binding.tvIntroduction.text = data.introduction
+            Glide.with(itemView.context).load(data.photo)
+                .apply(RequestOptions.circleCropTransform())
+                .into(binding.ivProfile)
         }
     }
 
@@ -27,4 +33,5 @@ class FollowerAdapter : RecyclerView.Adapter<FollowerAdapter.FollowerViewHolder>
     }
 
     override fun getItemCount(): Int = userList.size
+
 }

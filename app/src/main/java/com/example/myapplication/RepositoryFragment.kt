@@ -26,10 +26,10 @@ class RepositoryFragment : Fragment() {
 
         repositoryAdapter.repositoryList.addAll(
             listOf(
-                RepositoryData("안드로이드\n레파지토리", "안녕하세요안녕하세요안녕하세요"),
-                RepositoryData("안드로이드\n레파지토리1", "안녕하세요"),
-                RepositoryData("안드로이드\n레파지토리2", "안녕하세요"),
-                RepositoryData("안드로이드\n레파지토리3", "안녕하세요")
+                RepositoryData("안드로이드레파지토리", "안녕하세요안녕하세요안녕하세요"),
+                RepositoryData("안드로이드레파지토리1", "안녕하세요"),
+                RepositoryData("안드로이드레파지토리2", "안녕하세요"),
+                RepositoryData("안드로이드레파지토리3", "안녕하세요")
             )
         )
         repositoryAdapter.notifyDataSetChanged()

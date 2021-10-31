@@ -10,16 +10,12 @@
         android:id="@+id/rv_repository"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="2"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:itemCount="4"
-        android:layout_marginLeft="55dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="10dp"
+        tools:itemCount="3"
         tools:listitem="@layout/item_repository_list" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
