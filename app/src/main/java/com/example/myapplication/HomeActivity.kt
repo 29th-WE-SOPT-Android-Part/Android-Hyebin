@@ -8,7 +8,7 @@ import com.example.myapplication.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
     //private var postion = FIRST_POSITION
-    private lateinit var sampleViewPagerAdapter: sampleViewPagerAdapter
+    private lateinit var SampleViewPagerAdapter: SampleViewPagerAdapter
     private lateinit var binding : ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,10 +41,10 @@ class HomeActivity : AppCompatActivity() {
     private fun initAdapter() {
         val fragmentList = listOf(ProfileFragment(), HomeFragment(), CameraFragment())
 
-        sampleViewPagerAdapter = sampleViewPagerAdapter(this)
-        sampleViewPagerAdapter.fragments.addAll(fragmentList)
+        SampleViewPagerAdapter = SampleViewPagerAdapter(this)
+        SampleViewPagerAdapter.fragments.addAll(fragmentList)
 
-        binding.vpSample.adapter = sampleViewPagerAdapter
+        binding.vpSample.adapter = SampleViewPagerAdapter
     }
 
 
