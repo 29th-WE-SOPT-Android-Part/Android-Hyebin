@@ -688,3 +688,219 @@ data class FollowerData(
 
 <br><br><br>
 
+
+# 4️⃣ Fourth Week
+
+|LogIn|
+|---|
+|![ezgif com-gif-maker (11)](https://user-images.githubusercontent.com/69586104/141409725-87a1f71e-faee-4aef-9326-6f4190bfc721.gif)|
+
+
+<br><br>
+
+## LEVEL1
+
+<br><br>
+
+**PostMan 테스트 이미지 첨부**
+|POST|GET|
+|---|---|
+|![POST](https://user-images.githubusercontent.com/69586104/141409267-67df1f29-f08a-4c3e-b238-848bb282991d.png)|![조회](https://user-images.githubusercontent.com/69586104/141409462-16d10017-da44-4ffe-a2a1-d9ac608c070c.png)
+
+<br><br>
+
+**RequestData**
+
+
+```kotlin
+data class RequestLoginData(
+    @SerializedName("email")
+    val email: String,
+    val password: String
+)
+
+data class RequestSignUpData(
+    @SerializedName("email")
+    val email: String,
+    val name: String,
+    val password: String
+)
+```
+
+<br><br>
+
+**ResponseData**
+
+```kotlin
+data class ResponseLoginData(
+    val status: Int,
+    val success: Boolean,
+    val message: String,
+    val data: Data
+) {
+    data class Data(
+        val id: Int,
+        val name: String,
+        val email: String
+    )
+}
+
+
+data class ResponseSignUpData(
+    val status: Int,
+    val success: Boolean,
+    val message: String,
+    val data: Data
+) {
+    data class Data(
+        val id: Int,
+        val name: String,
+        val email: String
+    )
+}
+```
+
+<br><br>
+
+
+**SampleService**
+
+```kotlin
+interface SampleService {
+    @Headers("Content-Type: application/json")
+    @POST("user/login")
+    fun postLogin(
+        @Body requestLoginData: RequestLoginData
+    ) : Call<ResponseLoginData>
+}
+
+interface SignUpService {
+    @Headers("Content-Type: application/json")
+    @POST("user/signup")
+    fun postSignUp(
+        @Body requestSignUpData: RequestSignUpData
+    ) : Call<ResponseSignUpData>
+}
+```
+
+<br><br>
+
+
+
+**ServiceCreator**
+
+```kotlin
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+object ServiceCreator {
+    private const val BASE_URL = "https://asia-northeast3-we-sopt-29.cloudfunctions.net/api/"
+
+    private val retrofit: Retrofit = Retrofit
+        .Builder()
+        .baseUrl(BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+
+    val sampleService : SampleService = retrofit.create(SampleService::class.java)
+}
+
+
+object SignUpCreator {
+    private const val BASE_URL = "https://asia-northeast3-we-sopt-29.cloudfunctions.net/api/"
+
+    private val retrofit: Retrofit = Retrofit
+        .Builder()
+        .baseUrl(BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+
+    val signUpService : SignUpService = retrofit.create(SignUpService::class.java)
+}
+```
+
+<br><br>
+
+**SignInActivity**
+  
+```kotlin
+ private fun initNetwork() {
+        val requestLoginData = RequestLoginData(
+            binding.etId.text.toString(),
+            binding.etPassword.text.toString()
+        )
+
+        val call : Call<ResponseLoginData> = ServiceCreator.sampleService.postLogin(requestLoginData)
+        call.enqueue(object : Callback<ResponseLoginData> {
+            override fun onResponse(
+                call: Call<ResponseLoginData>,
+                response: Response<ResponseLoginData>
+            ) {
+                if(response.isSuccessful) {
+                    Toast.makeText(this@SignInActivity, "${response.body()?.data?.name}님 반갑습니다", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this@SignInActivity,HomeActivity::class.java))
+                } else {
+                    Toast.makeText(this@SignInActivity, "로그인에 실패했습니다", Toast.LENGTH_SHORT).show()
+                }
+
+            }
+
+            override fun onFailure(call: Call<ResponseLoginData>, t: Throwable) {
+                Log.e("NetworkTest", "error: $t")
+            }
+
+        })
+    }
+```
+
+<br><br>
+
+
+**SignUpActivity**
+```kotlin
+ private fun initNetwork() {
+        val requestSignUpData = RequestSignUpData(
+            binding.etName.text.toString(),
+            binding.etId.text.toString(),
+            binding.etPassword.text.toString()
+        )
+
+        val call : Call<ResponseSignUpData> = SignUpCreator.signUpService.postSignUp(requestSignUpData)
+        call.enqueue(object : Callback<ResponseSignUpData> {
+            override fun onResponse(
+                call: Call<ResponseSignUpData>,
+                response: Response<ResponseSignUpData>
+            ) {
+                if (response.isSuccessful) {
+                    Toast.makeText(this@SignUpActivity, response.body()?.message, Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this@SignUpActivity, "회원가입 실패", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseSignUpData>, t: Throwable) {
+                Log.e("NetworkTest", "error: $t")
+            }
+        })
+    }
+```
+
+
+<br><br><br><br>
+*** 
+<br>
+
+**🤍이번 과제를 통해 배운 내용 & 성장한 내용🤍**
+
+<br>
+
+**☝서버를 익혔습니다**
+<br>
+서버가 뭔지 정말 하나도 모르고 다 처음 보는 코드와 개념 투성이어서 조금은 어렵게 느껴졌었습니다 😥
+<br>
+그래도! 실습과 과제를 통해... 아주 조금은.. 이해를 한 것 같다는 생각이 듭니다!
+<br>
+더 복습하고 공부하면서 제대로 이해하고 넘어가겠습니다!
+
+
+<br><br><br>
+
+
