@@ -37,10 +37,10 @@
         <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/selector_tf_gray.xml" value="0.11203703703703703" />
         <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/font/noto_sans_kr.xml" value="0.2638888888888889" />
         <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_follower_fragment.xml" value="0.1" />
-        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_home.xml" value="0.152" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_repository_fragment.xml" value="0.22708333333333333" />
-        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_sign_up.xml" value="0.11794871794871795" />
         <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/bottomnavigation.xml" value="0.16485507246376813" />
         <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/follower.xml" value="0.12001811594202899" />
         <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/follower_fragment.xml" value="0.1" />
@@ -52,7 +52,7 @@
         <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/fragment_home_follower_.xml" value="0.12284701114488349" />
         <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/fragment_home_following_.xml" value="0.1157548125633232" />
         <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/fragment_home_test.xml" value="0.20018115942028986" />
-        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/fragment_profile.xml" value="0.17592592592592593" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/fragment_profile.xml" value="0.176" />
         <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/fragment_test.xml" value="0.20018115942028986" />
         <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/item_follower_list.xml" value="0.264" />
         <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/item_repository_list.xml" value="0.264" />

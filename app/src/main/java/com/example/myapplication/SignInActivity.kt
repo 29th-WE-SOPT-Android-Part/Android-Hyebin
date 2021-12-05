@@ -60,7 +60,4 @@ class SignInActivity : AppCompatActivity() {
             binding.etPassword.setText(pw)
         }
     }
-
-    
-
 }
