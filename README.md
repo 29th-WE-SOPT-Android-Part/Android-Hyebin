@@ -2,7 +2,12 @@
 ![github_이혜빈_ver1-25](https://user-images.githubusercontent.com/70698151/135754518-b0b65ab0-5cd6-45e6-8ce9-4b307a36e278.png) 
 
 <br><br><br>
+
+<details>
+<summary>1주차</summary>
+  
 # 1️⃣ First Week
+
 
 |SignIn|Login|Home|SignUp|
 |---|---|---|---|
@@ -191,7 +196,11 @@ git을 다루는 방법을 하나도 모르는 사람이었는데, 이번에 과
 
 
 <br><br><br><br><br>
+</details>
 
+<details>
+<summary>2주차</summary>
+  
 # 2️⃣ Second Week
 
 |Home|
@@ -473,7 +482,11 @@ binding.rvFollower.addItemDecoration(Decoration("#F658A6", 50,50,25,25))
 <br><br><br>
 
 <br><br><br><br><br>
-
+  </details>
+  
+<details>
+<summary>3주차</summary>
+  
 # 3️⃣ Third Week
 
 |SignUp|SignIn|Profile|Home|ViewPager|
@@ -688,7 +701,10 @@ data class FollowerData(
 
 <br><br><br>
 
-
+  </details>
+  
+  <details>
+<summary>4주차</summary>
 # 4️⃣ Fourth Week
 
 |LogIn|
@@ -902,5 +918,5 @@ object SignUpCreator {
 
 
 <br><br><br>
-
+</details>
 
