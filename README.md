@@ -920,14 +920,14 @@ object SignUpCreator {
 <br><br><br>
 </details>
 
-    <details>
+<details>
 <summary>7주차</summary>
-# 7️⃣ seventh Week
+      
+# 7️⃣ Seventh Week
 
 |onBoarding|autoLogin|autoLogin cancel|
 |---|---|---|
-|![ezgif com-gif-maker (11)](https://user-images.githubusercontent.com/69586104/141409725-87a1f71e-faee-4aef-9326-6f4190bfc721.gif)|
-
+|![ezgif com-gif-maker (12)](https://user-images.githubusercontent.com/69586104/145872035-8f9485f8-569e-40dd-9c3f-4d5f62269e3b.gif)|![ezgif com-gif-maker (13)](https://user-images.githubusercontent.com/69586104/145872089-8065230c-4060-49ff-9515-47776dd77a83.gif)|![ezgif com-gif-maker (14)](https://user-images.githubusercontent.com/69586104/145872131-05ba9313-073c-4a5d-a398-05fc93530b04.gif)
 
 <br><br>
 
@@ -935,188 +935,230 @@ object SignUpCreator {
 
 <br><br>
 
-**PostMan 테스트 이미지 첨부**
-|POST|GET|
-|---|---|
-|![POST](https://user-images.githubusercontent.com/69586104/141409267-67df1f29-f08a-4c3e-b238-848bb282991d.png)|![조회](https://user-images.githubusercontent.com/69586104/141409462-16d10017-da44-4ffe-a2a1-d9ac608c070c.png)
-
-<br><br>
-
-**RequestData**
+🤍view는 notion을 참고하여 제작했습니다🤍
+      
+<br>
+  
+**1-1. 온보딩 화면 만들기**
+  
+<br>
+  
+**nav_onboarding.xml**
 
 
 ```kotlin
-data class RequestLoginData(
-    @SerializedName("email")
-    val email: String,
-    val password: String
-)
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_onboarding"
+    app:startDestination="@id/onboardingFragment1">
 
-data class RequestSignUpData(
-    @SerializedName("email")
-    val email: String,
-    val name: String,
-    val password: String
-)
+    <fragment
+        android:id="@+id/onboardingFragment1"
+        android:name="com.example.myapplication.view.onboarding.OnboardingFragment1"
+        android:label="fragment_onboarding1"
+        tools:layout="@layout/fragment_onboarding1" >
+        <action
+            android:id="@+id/action_onboardingFragment1_to_onboardingFragment2"
+            app:destination="@id/onboardingFragment2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/onboardingFragment2"
+        android:name="com.example.myapplication.view.onboarding.OnboardingFragment2"
+        android:label="OnboardingFragment2" >
+        <action
+            android:id="@+id/action_onboardingFragment2_to_onboardingFragment3"
+            app:destination="@id/onboardingFragment3" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/onboardingFragment3"
+        android:name="com.example.myapplication.view.onboarding.OnboardingFragment3"
+        android:label="OnboardingFragment3">
+        <action
+            android:id="@+id/action_onboardingFragment3_to_signInActivity"
+            app:destination="@id/signInActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/signInActivity"
+        android:name="com.example.myapplication.view.login.SignInActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_signin" />
+</navigation>
 ```
 
 <br><br>
 
-**ResponseData**
+**OnboardingFragment1**
+  
+<br>
+  
+각 프레그먼트별로 buttonEvent를 생성했습니다
+
+  <br>
 
 ```kotlin
-data class ResponseLoginData(
-    val status: Int,
-    val success: Boolean,
-    val message: String,
-    val data: Data
-) {
-    data class Data(
-        val id: Int,
-        val name: String,
-        val email: String
-    )
-}
+fun initBtnEvent() {
+        binding.btnNext.setOnClickListener {
+            findNavController().navigate(R.id.action_onboardingFragment1_to_onboardingFragment2)
+        }
+    }
+```
+
+<br><br>
+
+**1-2. SharedPreferences 활용해서 자동로그인/자동로그인 해제**
+      
+<br>
+      
+**activity_cancel_auto_login**
+
+```kotlin
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.profile.CancelAutoLoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/pink"
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/noto_sans_kr_regular"
+            android:text="환경설정"
+            android:textColor="@color/white"
+            android:textFontWeight="800"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-data class ResponseSignUpData(
-    val status: Int,
-    val success: Boolean,
-    val message: String,
-    val data: Data
-) {
-    data class Data(
-        val id: Int,
-        val name: String,
-        val email: String
-    )
-}
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/tv_off_auto_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/noto_sans_kr_regular"
+        android:text="자동로그인 해제"
+        android:textColor="@color/maingray"
+        android:textFontWeight="400"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <LinearLayout
+        android:id="@+id/ll_line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/lightgray"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_off_auto_login" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
 <br><br>
 
 
-**SampleService**
-
-```kotlin
-interface SampleService {
-    @Headers("Content-Type: application/json")
-    @POST("user/login")
-    fun postLogin(
-        @Body requestLoginData: RequestLoginData
-    ) : Call<ResponseLoginData>
-}
-
-interface SignUpService {
-    @Headers("Content-Type: application/json")
-    @POST("user/signup")
-    fun postSignUp(
-        @Body requestSignUpData: RequestSignUpData
-    ) : Call<ResponseSignUpData>
-}
-```
-
-<br><br>
-
-
-
-**ServiceCreator**
-
-```kotlin
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-object ServiceCreator {
-    private const val BASE_URL = "https://asia-northeast3-we-sopt-29.cloudfunctions.net/api/"
-
-    private val retrofit: Retrofit = Retrofit
-        .Builder()
-        .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-
-    val sampleService : SampleService = retrofit.create(SampleService::class.java)
-}
-
-
-object SignUpCreator {
-    private const val BASE_URL = "https://asia-northeast3-we-sopt-29.cloudfunctions.net/api/"
-
-    private val retrofit: Retrofit = Retrofit
-        .Builder()
-        .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-
-    val signUpService : SignUpService = retrofit.create(SignUpService::class.java)
-}
-```
-
-<br><br>
-
-**SignInActivity**
+**SiginInActivity**
   
 ```kotlin
- private fun initNetwork() {
-        val requestLoginData = RequestLoginData(
-            binding.etId.text.toString(),
-            binding.etPassword.text.toString()
-        )
-
-        val call : Call<ResponseLoginData> = ServiceCreator.sampleService.postLogin(requestLoginData)
-        call.enqueue(object : Callback<ResponseLoginData> {
-            override fun onResponse(
-                call: Call<ResponseLoginData>,
-                response: Response<ResponseLoginData>
-            ) {
-                if(response.isSuccessful) {
-                    Toast.makeText(this@SignInActivity, "${response.body()?.data?.name}님 반갑습니다", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this@SignInActivity,HomeActivity::class.java))
-                } else {
-                    Toast.makeText(this@SignInActivity, "로그인에 실패했습니다", Toast.LENGTH_SHORT).show()
-                }
-
-            }
-
-            override fun onFailure(call: Call<ResponseLoginData>, t: Throwable) {
-                Log.e("NetworkTest", "error: $t")
-            }
-
-        })
+private fun initClickEvent() {
+    binding.ivAutoLogin.setOnClickListener {
+        binding.ivAutoLogin.isSelected = !binding.ivAutoLogin.isSelected
+            SOPTSharedPreferences.setAutoLogin(this, binding.ivAutoLogin.isSelected)
+        }
     }
+
+private fun isAutoLogin() {
+    if(SOPTSharedPreferences.getAutoLogin(this)) {
+         shortToast("자동로그인 완료")
+         startActivity(Intent(this, HomeActivity::class.java))
+         finish()
+    }
+}
 ```
 
 <br><br>
 
-
-**SignUpActivity**
+**CancelAutoLoginActivity**
+  
 ```kotlin
- private fun initNetwork() {
-        val requestSignUpData = RequestSignUpData(
-            binding.etName.text.toString(),
-            binding.etId.text.toString(),
-            binding.etPassword.text.toString()
-        )
-
-        val call : Call<ResponseSignUpData> = SignUpCreator.signUpService.postSignUp(requestSignUpData)
-        call.enqueue(object : Callback<ResponseSignUpData> {
-            override fun onResponse(
-                call: Call<ResponseSignUpData>,
-                response: Response<ResponseSignUpData>
-            ) {
-                if (response.isSuccessful) {
-                    Toast.makeText(this@SignUpActivity, response.body()?.message, Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(this@SignUpActivity, "회원가입 실패", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-            override fun onFailure(call: Call<ResponseSignUpData>, t: Throwable) {
-                Log.e("NetworkTest", "error: $t")
-            }
-        })
+private fun initClickEvent() {
+    binding.tvOffAutoLogin.setOnClickListener {
+        val settings: SharedPreferences = getSharedPreferences("USER_AUTH", MODE_PRIVATE)
+        val editor: SharedPreferences.Editor = settings.edit()
+        editor.remove("int")
+        editor.clear()
+        editor.commit()
     }
+}
 ```
-
-
+<br><br>
+  
+**1-3 본인이 사용하는 Util 클래스 코드 및 패키징 방식**
+<br>
+  util에서는 세미나 시간에 다룬 shortToast를 정의해둔 상태입니다. 
+  <br>
+  자주 사용하는 토스트 메시지 기능을 클래스로 만들어 여러 곳에서 사용할 수 있었습니다.
+<br>
+  ```kotlin
+fun Context.shortToast(message: String) {
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+}
+```
+  
+<br>
+  - 패키징 방식
+  <br>
+    -자주 생성되는 클래스인 adapter, api, data, util, view를 중심으로 하여 패키지를 나눴습니다.
+  
+ ┣ 📂adapter
+  <br>
+ ┣ 📂api
+  <br>
+ ┣ 📂data
+  <br> 
+ ┣ 📂util
+  <br>
+ ┗ 📂view
+  <br>
+  
+    ┣ 📂camera
+  
+    ┣ 📂home
+  
+    ┣ 📂login
+  
+    ┣ 📂onboarding
+    
+    ┗ 📂profile
 <br><br><br><br>
 *** 
 <br>
@@ -1125,13 +1167,24 @@ object SignUpCreator {
 
 <br>
 
-**☝서버를 익혔습니다**
+**☝navigation**
 <br>
-서버가 뭔지 정말 하나도 모르고 다 처음 보는 코드와 개념 투성이어서 조금은 어렵게 느껴졌었습니다 😥
+보통 어플을 실행했을때 자주 접했던 온보딩 화면을 만들 수 있는 기회라서 뜻깊고 앞으로 많이 활용될 것 같아 굉장히 많이 배운 것 같습니다.
+  <br>
+  <br>
+
+  
+**✌util에 대해 이해했습니다**
 <br>
-그래도! 실습과 과제를 통해... 아주 조금은.. 이해를 한 것 같다는 생각이 듭니다!
+  항상 자주 사용하는 부분에서 꼭 저렇게 써야하나라는 것을 많이 생각했는데, 이번 세미니와 과제를 통해 util을 배우고, 반복되는 코드를 단순화 할 수 있는 기회가 되었습니다.
 <br>
-더 복습하고 공부하면서 제대로 이해하고 넘어가겠습니다!
+<br>
+  
+**👌package기능에 대해 이해했습니다**
+<br>
+클래스가 너무 많아서 이제 뭐가 뭔지 헷갈리기 시작했는데, 이때 딱 패키징에 대해서 배우고 활용해보는 기회가 되었습니다! 앞으로 제가 정의한 패키징 방식에 따라 사용하면 나중에도 보다 프로젝트를 관리하기 좋을 것 같다는 생각이 들었습니다.
+<br>
+  
 
 
 <br><br><br>
