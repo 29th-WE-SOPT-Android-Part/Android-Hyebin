@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignInActivity">
+    tools:context=".view.login.SignInActivity">
+
 
     <ImageView
         android:id="@+id/iv_git"
@@ -130,6 +131,26 @@
         app:layout_constraintLeft_toLeftOf="@+id/tv_account"
         app:layout_constraintStart_toEndOf="@+id/tv_account"
         app:layout_constraintTop_toTopOf="@+id/tv_account" />
+
+    <ImageView
+        android:id="@+id/iv_auto_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/selector_checkbox"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_auto_login"
+        app:layout_constraintEnd_toStartOf="@+id/tv_auto_login"
+        app:layout_constraintTop_toTopOf="@+id/tv_auto_login" />
+
+    <TextView
+        android:id="@+id/tv_auto_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="자동 로그인"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_id"
+        app:layout_constraintEnd_toEndOf="@+id/et_id"
+        app:layout_constraintTop_toTopOf="@+id/tv_id" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

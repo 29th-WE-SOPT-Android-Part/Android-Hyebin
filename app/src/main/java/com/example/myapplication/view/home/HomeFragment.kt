@@ -1,17 +1,13 @@
-package com.example.myapplication
+package com.example.myapplication.view.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import androidx.viewpager2.widget.ViewPager2
 import com.example.myapplication.databinding.FragmentHomeBinding
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.adapter.HomeTabViewPagerAdapter
 
 class HomeFragment : Fragment() {
     private lateinit var homeTabViewPagerAdapter: HomeTabViewPagerAdapter

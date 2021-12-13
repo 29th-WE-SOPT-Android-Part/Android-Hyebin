@@ -1,14 +1,18 @@
-package com.example.myapplication
+package com.example.myapplication.view.home
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
+import com.example.myapplication.R
+import com.example.myapplication.adapter.SampleViewPagerAdapter
 import com.example.myapplication.databinding.ActivityHomeBinding
+import com.example.myapplication.view.camera.CameraFragment
+import com.example.myapplication.view.profile.ProfileFragment
 
 
 class HomeActivity : AppCompatActivity() {
     //private var postion = FIRST_POSITION
-    private lateinit var sampleViewPagerAdapter: sampleViewPagerAdapter
+    private lateinit var SampleViewPagerAdapter: SampleViewPagerAdapter
     private lateinit var binding : ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,10 +45,10 @@ class HomeActivity : AppCompatActivity() {
     private fun initAdapter() {
         val fragmentList = listOf(ProfileFragment(), HomeFragment(), CameraFragment())
 
-        sampleViewPagerAdapter = sampleViewPagerAdapter(this)
-        sampleViewPagerAdapter.fragments.addAll(fragmentList)
+        SampleViewPagerAdapter = SampleViewPagerAdapter(this)
+        SampleViewPagerAdapter.fragments.addAll(fragmentList)
 
-        binding.vpSample.adapter = sampleViewPagerAdapter
+        binding.vpSample.adapter = SampleViewPagerAdapter
     }
 
 
@@ -79,7 +83,5 @@ class HomeActivity : AppCompatActivity() {
         const val SECOND_FRAGMENT = 1
         const val THIRD_FRAGMENT = 2
     }
-
-
 }
 

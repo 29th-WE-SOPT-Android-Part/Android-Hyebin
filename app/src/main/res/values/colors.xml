@@ -11,4 +11,5 @@
     <color name="lightgray">#C1C1C1</color>
     <color name="maingray">#333333</color>
     <color name="subgray">#ACB5BD</color>
+    <color name="darkgray">#8F9090</color>
 </resources>

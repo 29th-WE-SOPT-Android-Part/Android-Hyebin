@@ -1,12 +1,12 @@
-package com.example.myapplication
+package com.example.myapplication.view.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
+import com.example.myapplication.adapter.FollowerAdapter
+import com.example.myapplication.data.FollowerData
 import com.example.myapplication.databinding.FollowerFragmentBinding
 
 

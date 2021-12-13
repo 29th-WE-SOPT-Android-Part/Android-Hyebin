@@ -1,12 +1,12 @@
-package com.example.myapplication
+package com.example.myapplication.view.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.databinding.FollowerFragmentBinding
+import com.example.myapplication.adapter.RepositoryAdapter
+import com.example.myapplication.data.RepositoryData
 import com.example.myapplication.databinding.RepositoryFragmentBinding
 
 class RepositoryFragment : Fragment() {

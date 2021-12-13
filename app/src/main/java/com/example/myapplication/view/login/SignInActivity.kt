@@ -1,31 +1,34 @@
-package com.example.myapplication
+package com.example.myapplication.view.login
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.result.ActivityResult
-import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication.databinding.ActivityMainBinding
-import retrofit2.Call
-import retrofit2.Callback
+import com.example.myapplication.util.SOPTSharedPreferences
+import com.example.myapplication.databinding.ActivitySigninBinding
+import com.example.myapplication.shortToast
+import com.example.myapplication.view.home.HomeActivity
 
 class SignInActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var getResultTextView: ActivityResultLauncher<Intent>
+    private lateinit var binding: ActivitySigninBinding
+    //private lateinit var getResultTextView: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        binding = ActivitySigninBinding.inflate(layoutInflater)
 
         pressLogInBtnEvent()
         pressSignUpBtnEvent()
+
+        initClickEvent()
+        isAutoLogin()
+
+        setContentView(binding.root)
     }
 
     //로그인 버튼 눌렀을 때 이벤트
-    fun pressLogInBtnEvent() {
+    private fun pressLogInBtnEvent() {
         val intentHome = Intent(this, HomeActivity::class.java)
         binding.apply {
             btnLogin.setOnClickListener {
@@ -34,10 +37,10 @@ class SignInActivity : AppCompatActivity() {
 
                 if (userId.isNotEmpty() && userPw.isNotEmpty()) {
                     startActivity(intentHome)
-                    Toast.makeText(this@SignInActivity, "$userId 님 환영합니다", Toast.LENGTH_SHORT)
-                        .show()
+                    //Toast.makeText(this@SignInActivity, "$userId 님 환영합니다", Toast.LENGTH_SHORT).show()
+                    shortToast("$userId 님 환영합니다")
                 } else {
-                    Toast.makeText(this@SignInActivity, "로그인 실패", Toast.LENGTH_SHORT).show()
+                    shortToast("로그인 실패")
                 }
             }
         }
@@ -45,7 +48,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
     //회원가입 버튼 눌렀을 때 이벤트
-    fun pressSignUpBtnEvent() {
+    private fun pressSignUpBtnEvent() {
         val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult -> }
         binding.tvSignin.setOnClickListener {
             startForResult.launch(Intent(this, SignUpActivity::class.java))
@@ -58,6 +61,22 @@ class SignInActivity : AppCompatActivity() {
 
             binding.etId.setText(id)
             binding.etPassword.setText(pw)
+        }
+    }
+
+    private fun initClickEvent() {
+        binding.ivAutoLogin.setOnClickListener {
+            binding.ivAutoLogin.isSelected = !binding.ivAutoLogin.isSelected
+
+            SOPTSharedPreferences.setAutoLogin(this, binding.ivAutoLogin.isSelected)
+        }
+    }
+
+    private fun isAutoLogin() {
+        if(SOPTSharedPreferences.getAutoLogin(this)) {
+            shortToast("자동로그인 완료")
+            startActivity(Intent(this, HomeActivity::class.java))
+            finish()
         }
     }
 }

@@ -1,9 +1,9 @@
-package com.example.myapplication
+package com.example.myapplication.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.databinding.ItemFollowerListBinding
+import com.example.myapplication.data.RepositoryData
 import com.example.myapplication.databinding.ItemRepositoryListBinding
 
 class RepositoryAdapter : RecyclerView.Adapter<RepositoryAdapter.RepositoryViewHolder>() {
