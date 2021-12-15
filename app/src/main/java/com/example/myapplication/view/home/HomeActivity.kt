@@ -63,18 +63,15 @@ class HomeActivity : AppCompatActivity() {
             when(it.itemId) {
                 R.id.menu_profile -> {
                     binding.vpSample.currentItem = FIRST_FRAGMENT
-                    return@setOnItemSelectedListener true
-
                 }
                 R.id.menu_home -> {
                     binding.vpSample.currentItem = SECOND_FRAGMENT
-                    return@setOnItemSelectedListener true
                 }
                 else -> {
                     binding.vpSample.currentItem = THIRD_FRAGMENT
-                    return@setOnItemSelectedListener true
                 }
             }
+            return@setOnItemSelectedListener true
         }
     }
 

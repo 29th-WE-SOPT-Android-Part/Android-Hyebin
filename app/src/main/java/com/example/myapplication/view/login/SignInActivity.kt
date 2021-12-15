@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.example.myapplication.util.SOPTSharedPreferences
+import com.example.myapplication.api.SOPTSharedPreferences
 import com.example.myapplication.databinding.ActivitySigninBinding
 import com.example.myapplication.shortToast
 import com.example.myapplication.view.home.HomeActivity

@@ -21,16 +21,20 @@
         android:label="OnboardingFragment2" >
         <action
             android:id="@+id/action_onboardingFragment2_to_onboardingFragment3"
-            app:destination="@id/onboardingFragment3" />
+            app:destination="@id/onboardingFragment3"
+            app:popUpTo="@id/onboardingFragment2"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
         android:id="@+id/onboardingFragment3"
         android:name="com.example.myapplication.view.onboarding.OnboardingFragment3"
-        android:label="OnboardingFragment3">
+        android:label="OnboardingFragment3"
+        tools:layout="@layout/fragment_onboarding3">
         <action
             android:id="@+id/action_onboardingFragment3_to_signInActivity"
-            app:destination="@id/signInActivity" />
+            app:destination="@id/signInActivity"
+            />
     </fragment>
     <activity
         android:id="@+id/signInActivity"
