@@ -928,7 +928,8 @@ object SignUpCreator {
 |onBoarding|autoLogin|autoLogin cancel|backstack|
 |---|---|---|---|
 |![ezgif com-gif-maker (12)](https://user-images.githubusercontent.com/69586104/145872035-8f9485f8-569e-40dd-9c3f-4d5f62269e3b.gif)|![ezgif com-gif-maker (13)](https://user-images.githubusercontent.com/69586104/145872089-8065230c-4060-49ff-9515-47776dd77a83.gif)|![ezgif com-gif-maker (14)](https://user-images.githubusercontent.com/69586104/145872131-05ba9313-073c-4a5d-a398-05fc93530b04.gif)|![ezgif com-gif-maker (16)](https://user-images.githubusercontent.com/69586104/146150704-bf316823-df86-4842-8df3-8238ca1dab95.gif)
-<br><br>
+
+  <br><br>
 
 ## LEVEL1
 
