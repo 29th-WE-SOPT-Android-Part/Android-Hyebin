@@ -3,7 +3,68 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/btn_fill_gray.xml" value="0.18072916666666666" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/btn_fill_orange.xml" value="0.1787037037037037" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/btn_fill_pink.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/btn_fill_white.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/et_border_pink.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/et_fill_gray.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/fill_gray.xml" value="0.10462962962962963" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/ic_camera_gray.xml" value="0.11875" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/ic_camera_pink.xml" value="0.12604166666666666" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/ic_checkbox_off.xml" value="0.11875" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/ic_checkbox_on.xml" value="0.11875" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/ic_home_24.xml" value="0.265625" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/ic_home_24_1.xml" value="0.265625" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/ic_home_24_2.xml" value="0.265625" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/ic_home_24_3.xml" value="0.265625" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/ic_home_gray.xml" value="0.24791666666666667" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/ic_home_pink.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/ic_img_github.xml" value="0.265625" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.15" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/ic_person_24.xml" value="0.265625" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/ic_person_24_1.xml" value="0.265625" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/ic_person_gray.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/ic_person_pink.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/iv_border_black.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/line_divder.xml" value="0.23487179487179488" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/line_divder_pink.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/line_divider.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/list_underline_gray.xml" value="0.24791666666666667" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/select_bottom_pink.xml" value="0.265625" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/selector_btn_orange.xml" value="0.18072916666666666" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/selector_btn_text_color.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/selector_checkbox.xml" value="0.11875" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/selector_icon.xml" value="0.15833333333333333" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/selector_tab.xml" value="0.10462962962962963" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/selector_text.xml" value="0.10462962962962963" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/drawable/selector_tf_gray.xml" value="0.11203703703703703" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/font/noto_sans_kr.xml" value="0.2638888888888889" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_follower_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_home.xml" value="0.152" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_repository_fragment.xml" value="0.22708333333333333" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/bottomnavigation.xml" value="0.16485507246376813" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/follower.xml" value="0.12001811594202899" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/follower_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/fragment_camera.xml" value="0.14945652173913043" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/fragment_follower2.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/fragment_follower_.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/fragment_following.xml" value="0.12284701114488349" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/fragment_home_follower_.xml" value="0.12284701114488349" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/fragment_home_following_.xml" value="0.1157548125633232" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/fragment_home_test.xml" value="0.20018115942028986" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/fragment_profile.xml" value="0.17592592592592593" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/fragment_test.xml" value="0.20018115942028986" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/item_follower_list.xml" value="0.264" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/item_repository_list.xml" value="0.264" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/item_sample_list.xml" value="0.176" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/line_divider.xml" value="0.11094224924012158" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/layout/repository_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/menu/menu_bottom.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/82104/AndroidStudioProjects/Android-Hyebin/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18489583333333334" />
       </map>
     </option>
   </component>

@@ -10,7 +10,6 @@ import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentOnboarding2Binding
 
 class OnboardingFragment2 : Fragment() {
-    private lateinit var OnboardingFragment2: FragmentOnboarding2Binding
     private var _binding: FragmentOnboarding2Binding? = null
     private val binding get() = _binding!!
 
@@ -27,5 +26,10 @@ class OnboardingFragment2 : Fragment() {
         binding.btnNext.setOnClickListener {
             findNavController().navigate(R.id.action_onboardingFragment2_to_onboardingFragment3)
         }
+    }
+
+    override fun onDestroyView() {
+        _binding = null
+        super.onDestroyView()
     }
 }

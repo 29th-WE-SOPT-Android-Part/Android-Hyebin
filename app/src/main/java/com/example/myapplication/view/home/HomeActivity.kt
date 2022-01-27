@@ -11,15 +11,13 @@ import com.example.myapplication.view.profile.ProfileFragment
 
 
 class HomeActivity : AppCompatActivity() {
-    //private var postion = FIRST_POSITION
-    private lateinit var SampleViewPagerAdapter: SampleViewPagerAdapter
+    private lateinit var sampleViewPagerAdapter: SampleViewPagerAdapter
     private lateinit var binding : ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
 
-        //initTransactionEvent()
         initAdapter()
         initBottomNavigation()
 
@@ -27,28 +25,13 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
-//    fun initTransactionEvent() {
-//        val followerFragment = FollowerFragment()
-//        val repositstoryFragment = RepositoryFragment()
-//
-//        supportFragmentManager.beginTransaction().add(R.id.container_rv, followerFragment).commit()
-//
-//        binding.btnFollower.setOnClickListener {
-//            supportFragmentManager.beginTransaction().replace(R.id.container_rv, followerFragment) .commit()
-//        }
-//
-//        binding.btnRepository.setOnClickListener {
-//            supportFragmentManager.beginTransaction().replace(R.id.container_rv, repositstoryFragment) .commit()
-//        }
-//    }
-
     private fun initAdapter() {
         val fragmentList = listOf(ProfileFragment(), HomeFragment(), CameraFragment())
 
-        SampleViewPagerAdapter = SampleViewPagerAdapter(this)
-        SampleViewPagerAdapter.fragments.addAll(fragmentList)
+        sampleViewPagerAdapter = SampleViewPagerAdapter(this)
+        sampleViewPagerAdapter.fragments.addAll(fragmentList)
 
-        binding.vpSample.adapter = SampleViewPagerAdapter
+        binding.vpSample.adapter = sampleViewPagerAdapter
     }
 
 

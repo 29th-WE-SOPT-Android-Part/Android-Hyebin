@@ -21,7 +21,7 @@ class ProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentProfileBinding.inflate(layoutInflater, container, false)
 
         initSettingListener()
@@ -41,21 +41,21 @@ class ProfileFragment : Fragment() {
         val followerFragment = FollowerFragment()
         val repositstoryFragment = RepositoryFragment()
 
-        getActivity()?.getSupportFragmentManager()
+        requireActivity().getSupportFragmentManager()
 
-        getActivity()?.supportFragmentManager?.beginTransaction()
-            ?.add(R.id.container_rv, followerFragment)?.commit()
+        requireActivity().supportFragmentManager.beginTransaction()
+            .add(R.id.container_rv, followerFragment).commit()
 
         binding.btnFollower.setOnClickListener {
-            getActivity()?.supportFragmentManager?.beginTransaction()
-                ?.replace(R.id.container_rv, followerFragment)?.commit()
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.container_rv, followerFragment).commit()
             binding.btnFollower.isSelected = true;
             binding.btnRepository.isSelected = false;
         }
 
         binding.btnRepository.setOnClickListener {
-            getActivity()?.supportFragmentManager?.beginTransaction()
-                ?.replace(R.id.container_rv, repositstoryFragment)?.commit()
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.container_rv, repositstoryFragment).commit()
             binding.btnRepository.isSelected = true;
             binding.btnFollower.isSelected = false;
         }
