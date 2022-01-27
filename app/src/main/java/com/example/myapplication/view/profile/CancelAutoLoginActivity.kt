@@ -13,9 +13,8 @@ class CancelAutoLoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCancelAutoLoginBinding.inflate(layoutInflater)
 
-        initClickEvent()
-
         setContentView(binding.root)
+        initClickEvent()
     }
 
     private fun initClickEvent() {

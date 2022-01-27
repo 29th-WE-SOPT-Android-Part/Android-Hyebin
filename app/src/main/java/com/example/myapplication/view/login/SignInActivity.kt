@@ -18,13 +18,13 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySigninBinding.inflate(layoutInflater)
 
+        setContentView(binding.root)
+
         pressLogInBtnEvent()
         pressSignUpBtnEvent()
 
         initClickEvent()
         isAutoLogin()
-
-        setContentView(binding.root)
     }
 
     //로그인 버튼 눌렀을 때 이벤트
