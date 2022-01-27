@@ -15,10 +15,10 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".view.profile.CancelAutoLoginActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".view.onboarding.OnBoardingActivity"
-            android:exported="false">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,18 +27,18 @@
         </activity>
         <activity
             android:name=".view.profile.RepositoryFragment"
-            android:exported="false"
+            android:exported="true"
             tools:ignore="Instantiatable" />
         <activity
             android:name=".view.profile.FollowerFragment"
-            android:exported="false"
+            android:exported="true"
             tools:ignore="Instantiatable" />
         <activity
             android:name=".view.login.SignUpActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".view.home.HomeActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".view.login.SignInActivity"
             android:exported="true"></activity>
